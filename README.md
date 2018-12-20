@@ -11,10 +11,6 @@ I need to find a lot more correlations/play with interrelationships
 
 
 ## Part 1: Finish Scraping:
-
-
-- ~5000 items left to scrape
-
 - Cleaning Data and re-attempting to find on Yelp by leveraging Google Places API where needed
 
 - Making sure its the right business associated to the right name and trying to fix

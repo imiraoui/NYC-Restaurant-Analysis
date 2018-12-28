@@ -177,6 +177,20 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
 
 ### Potential Policy Implications
 
+* Aside from the predictive abilities of this model, we saw that restaurants' sanitary conditions tend to be relatively "sticky". as of now, the DOH reserves the right to close a restaurant for scores above 50 or to "to correct a public health hazard that cannot be corrected immediately or when a restaurant is operating without a valid permit". However, many restaurants that have low grades (with scores below 50 but higher than 13) do not correct their scores easily and may need additional incentives/penalties. While the current inspection system pushes restaurants into correcting their sanitary conditions as they will be subject to inspections increasingly frequently (cf. image below), we could suggest alternative mechanisms to remedy better to this issue.
+ 1. Restaurants could be forced to pay for Food Safety Consultants after a certain amount of inspections within a short period of time to be able to learn and adopt the right behaviors.
+ 2. An additional penalty could be added after a certain amount of inspections in order to add a financial burden to restaurants that have not improved their sanitary behaviors and give them an additional incentives to change their habits.
+    * Alternatively, restaurants could have to pay a fine that grows with the time they have spent below "A".
+ 3. Restaurants could be forced to close if they have not been able to (re-)establish an A grade following a certain number of inspections
 
+<span style="display:block;text-align:center">![Inspection Schedule Depending on the Restaurant's Grade](https://1.bp.blogspot.com/-m6OL9KyTegs/XCYwNlgflPI/AAAAAAAAlhM/NwgjCRQVdVQCWIvBi85b_jDmYjurfz0bgCLcBGAs/s320/grade%2Btable.PNG)
 
-### Area of Future Research
+_Graph as per the DOH official documentation available at (https://www1.nyc.gov/assets/doh/downloads/pdf/rii/inspection-cycle-overview.pdf)_</span>
+
+* As the model allows to predict sanitary issues more accurately the City could target its inspections better and reduce its costs/improve its ROI.
+
+### Areas for Future Research
+
+- Mapping the cost of an inspection and the potential revenue that could be derived from restaurants' violations in order to set the threshold optimally to maximize revenues and incentivize positive behaviors
+
+- Quantifying and optimizing the savings that could be made from the use of the new model in determining the timeframe for each inspections

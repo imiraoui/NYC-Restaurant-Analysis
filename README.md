@@ -1,8 +1,12 @@
 # Analyzing New York City's Sanitary Inspection
 
+### Abstract
+
+
+
 1. [Constructing and Manipulating the Dataset](#part1)
 2. [Visualizing the Dataset and Attempting to Predict a Restaurant's Health Grade](#part2)
-3. [Guiding Policy and Further Analyses](#part3)
+3. [Guiding Policy and Future Analysis](#part3)
 
 
 ## Creating our Dataset <a name="part1"></a>
@@ -146,4 +150,33 @@ As we had hypothesized, there appears to be some positive correlation between th
 
 The more often a restaurant gets inspected, the less likely the business is to receive an "A" grade. The relationship seems to be much more signifcant as well.
 
-## Guiding Policy And Further Analyses <a name="part3"></a>
+## Guiding Policy And Future Analysis <a name="part3"></a>
+
+### Splitting and Setting Up our dataset
+
+We split our data 60/20/20 between the Training/Test/Validation set in order to create and test our models.
+
+### A Logistic Regression Does Not Improve the Model Much
+
+<span style="display:block;text-align:center">![Logistic Regression Test Set AUC Curve](https://3.bp.blogspot.com/-eozPCUeDsNY/XCYsyGh8UuI/AAAAAAAAlgw/xlVq1f775f4mb0r5eL3qEA8bJC0zPIYmgCLcBGAs/s320/Log_ROC.png)</span>
+
+
+### A Random Forest Provides with the Best Results
+
+<span style="display:block;text-align:center">**On the Test Set**
+
+![Random Forest Regression Test Set AUC Curve](https://2.bp.blogspot.com/-D6xz9Fo6Z0Q/XCYsyMZUI9I/AAAAAAAAlg0/l9cz-EHztSw2QeQouc-zypNqDUFv_obxwCLcBGAs/s320/RF_test_ROC.png)</span>
+
+<span style="display:block;text-align:center">**On the Validation Set**
+
+![Random Forest Regression Validation Set AUC Curve](https://4.bp.blogspot.com/-yQlKW4Zu_Lg/XCYtVXVvOhI/AAAAAAAAlhA/NR3ZgKKvg8sHDCvePxY4g4UZac4cO8JsQCLcBGAs/s320/RF_validation_ROC.pngg)</span>
+
+### Interpeting the Results
+
+
+
+### Potential Policy Implications
+
+
+
+### Area of Future Research

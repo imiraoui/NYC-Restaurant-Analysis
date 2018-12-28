@@ -62,6 +62,9 @@ We thus aggregate the result of our parsing into 5 different categories:
 4. Open for Short Hours ("Short Hours")
 5. Data not available - not the usual format or not disclosed on Yelp ("N/A")
 
+
+**After cleaning the dataset, we study ~17,000 restaurants**
+
 ## Visualizing the Data and Creating a Model <a name="part2"></a>
 
 ### Geographical Location is For the Most Part Irrelevant
@@ -193,7 +196,9 @@ For the model, we keep the variables relating to the inspection count, the chain
  1. Restaurants could be forced to pay for Food Safety Consultants after a certain amount of inspections within a short period of time to be able to learn and adopt the right behaviors.
  2. An additional penalty could be added after a certain amount of inspections in order to add a financial burden to restaurants that have not improved their sanitary behaviors and give them an additional incentives to change their habits.
     * Alternatively, restaurants could have to pay a fine that grows with the time they have spent below "A".
- 3. Restaurants could be forced to close if they have not been able to (re-)establish an A grade following a certain number of inspections
+ 3. Make mandatory the use of an external "taskforce" to resolve the sanitary issues after a certain number of inspections.
+ 4. Restaurants could be forced to close if they have not been able to (re-)establish an A grade following a certain number of inspections.
+
 
 
 
@@ -211,3 +216,5 @@ _Graph as per the DOH official documentation available at (https://www1.nyc.gov/
 - Quantifying and optimizing the savings that could be made from the use of the new model in determining the timeframe for each inspections
 
 - While Yelp does not provide free access to the restaurants' reviews, using NLP analysis on written reviews may allow to refine the analysis further and could provide significant improvement to the current model
+
+- Leveraging the Google Places API and additional datapoints on the restaurants such as the presence of a website, the volume of visits,etc. could provide additional insights

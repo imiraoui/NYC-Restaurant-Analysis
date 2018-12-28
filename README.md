@@ -2,7 +2,7 @@
 
 1. [Constructing and Manipulating the Dataset](#part1)
 2. [Visualizing the Dataset and Attempting to Predict a Restaurant's Health Grade](#part2)
-3. [Guiding Policy Going Forward](#part3)
+3. [Guiding Policy and Further Analyses](#part3)
 
 
 ## Creating our Dataset <a name="part1"></a>
@@ -54,9 +54,16 @@ We thus aggregate the result of our parsing into 5 different categories:
 
 ## Visualizing the Data and Creating a Model <a name="part2"></a>
 
-### Geographical Location is  Irrelevant
+### Geographical Location is For the Most Part Irrelevant
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A by Borough](https://3.bp.blogspot.com/-jmUrpE6DCA0/XCYNX0n-cdI/AAAAAAAAlfk/ZgNmbYkCk7kxDR_XHwwGbxanh2FjmikaQCLcBGAs/s320/By%2BBorough.png)</span>
 
+The geographic area does not seem to indicate too much with respect to the sanitary conditions of Restaurants' within a certain area.
 
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A by Neighborhood](https://4.bp.blogspot.com/-jPyG79mBr-E/XCYmPM6AHZI/AAAAAAAAlgc/aT5Drif0U4siAZ2M9n2yIkiCQUaPm0OlACLcBGAs/s320/Restaurants%2BGraded%2BA%2Bby%2BNeighborhood.png)</span>
+
+While most neighborhoods have generally the same sanitary conditions, we note slight differences depending on the neighborhoods.
+
+**A chloropleth map is also available under "proportion_map.html"**
 
 ### An Increasing Number of Violations within a growing Dataset
 
@@ -79,11 +86,11 @@ However, distributions intra-months are very similar as well. It does not seem t
 
 ### The Type of Business Highlights Relevant Sanitary Differences
 
-<span style="display:block;text-align:center">![JoyPlot by Year](https://4.bp.blogspot.com/-UZNJyomqcyY/XCYDRhxouaI/AAAAAAAAlfM/ojBwLAIpQoILDwijqCFTW20O-z6wYLhEQCLcBGAs/s320/Food%2Bvs%2Bno%2BFood.png )</span>
+<span style="display:block;text-align:center">![Is it food?](https://4.bp.blogspot.com/-UZNJyomqcyY/XCYDRhxouaI/AAAAAAAAlfM/ojBwLAIpQoILDwijqCFTW20O-z6wYLhEQCLcBGAs/s320/Food%2Bvs%2Bno%2BFood.png )</span>
 
 Whether a restaurant serves food or not seems to be a relevant differentiation factor in determining a business' sanitary conditions.
 
-<span style="display:block;text-align:center">![JoyPlot by Year](https://3.bp.blogspot.com/-6MVHXQKhCPk/XCYDRg_YLhI/AAAAAAAAlfI/qdnalN0iV6M-WCWwb_kWt1zAgl0QmRcIQCLcBGAs/s1600/Restaurants%2BGraded%2BA%2Bby%2BType.png)</span>
+<span style="display:block;text-align:center">![Type of Business](https://3.bp.blogspot.com/-6MVHXQKhCPk/XCYDRg_YLhI/AAAAAAAAlfI/qdnalN0iV6M-WCWwb_kWt1zAgl0QmRcIQCLcBGAs/s1600/Restaurants%2BGraded%2BA%2Bby%2BType.png)</span>
 
 As highlighted by the graph above, we could even refine the analysis as we notice that there is a significant variability in businesses' sanitary conditions depending on their main source of activity more.
 
@@ -102,19 +109,41 @@ As highlighted by the graph above, we could even refine the analysis as we notic
 
 While some categories only have a few businesses and may be too small to provide a very thorough picture, we can nonetheless infer relevant differences depending on the businesses' sources of activity.
 
-### Review Count
+### The Number of Reviews Does Not Inform Much on Inspection scores
 
-### Rating
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Number of Reviews](https://4.bp.blogspot.com/-UvIrOcuBZhc/XCYr0zsFHLI/AAAAAAAAlgo/XzzenToNTuIotZW1UO6h5EpDTPXqB-tkACLcBGAs/s1600/A%2Bby%2Blog%2Bof%2BReview%2BCount.pngg)</span>
 
-### Price
+When adjusted for the scale, the number of reviews does not seem to indicate much with respect to the sanitary grade of a restaurant.
 
-### Hours of Operations
+### The Average Rating on Yelp is Uncorrelated with Inspection Scores
+
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Average Rating](https://4.bp.blogspot.com/-CQrTaOlKR-0/XCYQIk_wetI/AAAAAAAAlgA/Tz71nHxvh0Iechu1HHipCGihDQHFvT9mACLcBGAs/s320/Score%2Bby%2BRating.png)</span>
+
+The average rating on Yelp seems for the most part uncorrelated with inspection results.
 
 
-### Restaurants' Sanitary Issues Tend to be Recurrent
+### The Price Level Does Not Indicate Much
 
-![Proportion of Restaurants Graded A By Inspection Count](https://2.bp.blogspot.com/-VPDJRCydfho/XCVZoAI6sqI/AAAAAAAAld0/iBHNhqD6AD005dQkJL3BXqjKh4hRML7RACLcBGAs/s320/A%2Bby%2Binspection%2Bcount.png)
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Price Point](https://2.bp.blogspot.com/-THTbIIZ4pu0/XCYQIJDO8hI/AAAAAAAAlf8/JdP-eBYC-AgSvuUwyAr9lWOw0MwYx_pKgCLcBGAs/s1600/Proportion%2BA%2Bby%2BPrice.png)</span>
 
-The more often a restaurant gets inspected, the less likely the business is to receive an "A" grade.
+The Price level does not seem to indicate any relationship with sanitary conditions aside from the highest price point, where as expected, restaurants tend to have slightly better health grades.
 
-## Guiding Policy <a name="part3"></a>
+### Hours of Operations Are Mostly Irrelevant
+
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Hours of Operations](https://4.bp.blogspot.com/-mDsw1ghHlvM/XCYQHkqDj_I/AAAAAAAAlfw/BspQvIatTWcf8S073UEiG7o61ZFU1TwggCLcBGAs/s1600/A%2Bby%2Bhours%2Bof%2Boperation.png)</span>
+
+Hours of operations do not seem to matter much as only the restaurants open overnight tend to have a lower likelihood of being graded A.
+
+### Chain size is Positively Correlated with Sanitary Conditions
+
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Chain Size](https://3.bp.blogspot.com/-d4JYvh9ju2Y/XCYQHpi82CI/AAAAAAAAlf4/q9QbVkjLksE_6R1POKbvse7zfImo9JwHgCLcBGAs/s320/A%2Bby%2Bchain%2Bsize.png)</span>
+
+As we had hypothesized, there appears to be some positive correlation between the chain size of the restaurant and the likelihood of the restaurant being rated A.
+
+### Restaurants' Sanitary Issues Tend to be Very Recurrent
+
+<span style="display:block;text-align:center">![Proportion of Restaurants Graded A By Inspection Count](https://2.bp.blogspot.com/-VPDJRCydfho/XCVZoAI6sqI/AAAAAAAAld0/iBHNhqD6AD005dQkJL3BXqjKh4hRML7RACLcBGAs/s320/A%2Bby%2Binspection%2Bcount.png)</span>
+
+The more often a restaurant gets inspected, the less likely the business is to receive an "A" grade. The relationship seems to be much more signifcant as well.
+
+## Guiding Policy And Further Analyses <a name="part3"></a>

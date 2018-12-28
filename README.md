@@ -1,4 +1,4 @@
-# Analyzing New York City's Sanitary Inspection
+# Analyzing New York City Restaurants' Sanitary Inspections
 
 ### Abstract
 
@@ -206,7 +206,7 @@ _Graph as per the DOH official documentation available at (https://www1.nyc.gov/
 
 ### Areas for Future Research
 
-- Mapping the cost of an inspection and the potential revenue that could be derived from restaurants' violations in order to set the threshold optimally to maximize revenues and set customized inspection timelines
+- Mapping the cost of an inspection and the potential revenue that could be derived from restaurants' violations (https://www1.nyc.gov/assets/doh/downloads/pdf/rii/ri-violation-penalty.pdf) in order to set the threshold optimally to maximize revenues and set customized inspection timelines
 
 - Quantifying and optimizing the savings that could be made from the use of the new model in determining the timeframe for each inspections
 

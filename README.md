@@ -162,6 +162,10 @@ The more often a restaurant gets inspected, the less likely the business is to r
 
 We split our data 60/20/20 between the Training/Test/Validation set in order to create and test our models.
 
+We standardize the variable related to the size of the chain and the number of reviews.
+
+For the model, we keep the variables relating to the inspection count, the chain size, the type of cuisine, the price point, the neighborhood and whether the restaurant is open overnight.
+
 ### A Logistic Regression Does Not Improve the Model Much
 
 <span style="display:block;text-align:center">![Logistic Regression Test Set AUC Curve](https://3.bp.blogspot.com/-eozPCUeDsNY/XCYsyGh8UuI/AAAAAAAAlgw/xlVq1f775f4mb0r5eL3qEA8bJC0zPIYmgCLcBGAs/s320/Log_ROC.png)</span>
@@ -177,11 +181,13 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
 
 ![Random Forest Regression Validation Set AUC Curve](https://4.bp.blogspot.com/-yQlKW4Zu_Lg/XCYtVXVvOhI/AAAAAAAAlhA/NR3ZgKKvg8sHDCvePxY4g4UZac4cO8JsQCLcBGAs/s320/RF_validation_ROC.png)</span>
 
-### Interpeting the Results
-
-
-
 ### Potential Policy Implications
+
+* As the model allows to predict sanitary issues more accurately the City could refine its inspections criteria and reduce the inspection frequency on the low-risk restaurants and focus on the businesses that yield higher risks. It could allow the city to greatly improve its ROI as the DOH could target more efficiently its inspections
+  * For Instance, using a threshold of 0.001 on our model, we are able to correctly predict that **~38-39%** of the restaurants will be graded "A" while missing only **~2-3%** of the businesses that would have otherwise received a lower score.
+  * Using a threhsold of 0.02 our model, we are able to correctly predict that **~53-55%** of the restaurants will be graded "A" while missing only **~10-12%** of the businesses that would have otherwise received a lower score.
+
+<span style="display:block;text-align:center">![Random Forest Regression Test Set Precision Recall Curves](https://4.bp.blogspot.com/--g5DkETOU3w/XCZCAxBiRII/AAAAAAAAlhY/YOwKqg-MXSgTybstFeorEiDBe_VaX0s7wCLcBGAs/s320/precision-recall.png)</span>
 
 * Aside from the predictive abilities of this model, we saw that restaurants' sanitary conditions tend to be relatively "sticky". as of now, the DOH reserves the right to close a restaurant for scores above 50 or to "to correct a public health hazard that cannot be corrected immediately or when a restaurant is operating without a valid permit". However, many restaurants that have low grades (with scores below 50 but higher than 13) do not correct their scores easily and may need additional incentives/penalties. While the current inspection system pushes restaurants into correcting their sanitary conditions as they will be subject to inspections increasingly frequently (cf. image below), we could suggest alternative mechanisms to remedy better to this issue.
  1. Restaurants could be forced to pay for Food Safety Consultants after a certain amount of inspections within a short period of time to be able to learn and adopt the right behaviors.
@@ -196,11 +202,7 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
 
 _Graph as per the DOH official documentation available at (https://www1.nyc.gov/assets/doh/downloads/pdf/rii/inspection-cycle-overview.pdf)_</span>
 
-* As the model allows to predict sanitary issues more accurately the City could refine its inspections criteria and reduce the inspection frequency on the low-risk restaurants and focus on the businesses that yield higher risks. It could allow the city to greatly improve its ROI as the DOH could target more efficiently its inspections
- * For Instance, using a threshold of 0.001 on our model, we are able to correctly predict that **~38-39%** of the restaurants will be graded "A" while missing only **~1-3** of the businesses that would have otherwise received a lower score.
-  * Using a threhsold of 0.02 our model, we are able to correctly predict that **~50-65%** of the restaurants will be graded "A" while missing only **~10-12%** of the businesses that would have otherwise received a lower score.
 
-<span style="display:block;text-align:center">![Random Forest Regression Test Set Precision Recall Curves](https://4.bp.blogspot.com/--g5DkETOU3w/XCZCAxBiRII/AAAAAAAAlhY/YOwKqg-MXSgTybstFeorEiDBe_VaX0s7wCLcBGAs/s320/precision-recall.png)</span>
 
 ### Areas for Future Research
 

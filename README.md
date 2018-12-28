@@ -2,7 +2,13 @@
 
 ### Abstract
 
+Using New York City's DOH data and Yelp API, we attempt to predict a restaurant's health grade. As most websites do not provide free access to written reviews, we focus on objective facts around the businesses such as the average rating, the number of reviews, the hours of operations, etc.
 
+Our analysis shows that most variables are uncorrelated with a restaurant's sanitary conditions. However, the chain size and the number of recent inspections seem to play an important role in predicting a restaurant's health grade.
+
+Using a Random Forest Regressor, we are able to significantly better predict a restaurant's health grade. The model could be used by the city to customize its inspection schedule and improve its ROI.
+
+We conclude by suggesting policy improvements and future areas of research to further the analysis.
 
 1. [Constructing and Manipulating the Dataset](#part1)
 2. [Visualizing the Dataset and Attempting to Predict a Restaurant's Health Grade](#part2)
@@ -152,7 +158,7 @@ The more often a restaurant gets inspected, the less likely the business is to r
 
 ## Guiding Policy And Future Analysis <a name="part3"></a>
 
-### Splitting and Setting Up our dataset
+### Splitting and Setting Up our Dataset
 
 We split our data 60/20/20 between the Training/Test/Validation set in order to create and test our models.
 
@@ -169,7 +175,7 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
 
 <span style="display:block;text-align:center">**On the Validation Set**
 
-![Random Forest Regression Validation Set AUC Curve](https://4.bp.blogspot.com/-yQlKW4Zu_Lg/XCYtVXVvOhI/AAAAAAAAlhA/NR3ZgKKvg8sHDCvePxY4g4UZac4cO8JsQCLcBGAs/s320/RF_validation_ROC.pngg)</span>
+![Random Forest Regression Validation Set AUC Curve](https://4.bp.blogspot.com/-yQlKW4Zu_Lg/XCYtVXVvOhI/AAAAAAAAlhA/NR3ZgKKvg8sHDCvePxY4g4UZac4cO8JsQCLcBGAs/s320/RF_validation_ROC.png)</span>
 
 ### Interpeting the Results
 
@@ -183,14 +189,23 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
     * Alternatively, restaurants could have to pay a fine that grows with the time they have spent below "A".
  3. Restaurants could be forced to close if they have not been able to (re-)establish an A grade following a certain number of inspections
 
+
+
+
 <span style="display:block;text-align:center">![Inspection Schedule Depending on the Restaurant's Grade](https://1.bp.blogspot.com/-m6OL9KyTegs/XCYwNlgflPI/AAAAAAAAlhM/NwgjCRQVdVQCWIvBi85b_jDmYjurfz0bgCLcBGAs/s320/grade%2Btable.PNG)
 
 _Graph as per the DOH official documentation available at (https://www1.nyc.gov/assets/doh/downloads/pdf/rii/inspection-cycle-overview.pdf)_</span>
 
-* As the model allows to predict sanitary issues more accurately the City could target its inspections better and reduce its costs/improve its ROI.
+* As the model allows to predict sanitary issues more accurately the City could refine its inspections criteria and reduce the inspection frequency on the low-risk restaurants and focus on the businesses that yield higher risks. It could allow the city to greatly improve its ROI as the DOH could target more efficiently its inspections
+ * For Instance, using a threshold of 0.001 on our model, we are able to correctly predict that **~38-39%** of the restaurants will be graded "A" while missing only **~1-3** of the businesses that would have otherwise received a lower score.
+  * Using a threhsold of 0.02 our model, we are able to correctly predict that **~50-65%** of the restaurants will be graded "A" while missing only **~10-12%** of the businesses that would have otherwise received a lower score.
+
+<span style="display:block;text-align:center">![Random Forest Regression Test Set Precision Recall Curves](https://4.bp.blogspot.com/--g5DkETOU3w/XCZCAxBiRII/AAAAAAAAlhY/YOwKqg-MXSgTybstFeorEiDBe_VaX0s7wCLcBGAs/s320/precision-recall.png)</span>
 
 ### Areas for Future Research
 
-- Mapping the cost of an inspection and the potential revenue that could be derived from restaurants' violations in order to set the threshold optimally to maximize revenues and incentivize positive behaviors
+- Mapping the cost of an inspection and the potential revenue that could be derived from restaurants' violations in order to set the threshold optimally to maximize revenues and set customized inspection timelines
 
 - Quantifying and optimizing the savings that could be made from the use of the new model in determining the timeframe for each inspections
+
+- While Yelp does not provide free access to the restaurants' reviews, using NLP analysis on written reviews may allow to refine the analysis further and could provide significant improvement to the current model

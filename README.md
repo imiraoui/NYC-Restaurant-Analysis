@@ -6,7 +6,7 @@ Using New York City's DOH data and Yelp API, we attempt to predict a restaurant'
 
 Our analysis shows that most variables are uncorrelated with a restaurant's sanitary conditions. However, the chain size and the number of recent inspections seem to play an important role in predicting a restaurant's health grade.
 
-Using a Random Forest Regressor, we are able to significantly better predict a restaurant's health grade. The model could be used by the city to customize its inspection schedule and improve its ROI.
+Using a Random Forest, we are able to significantly better predict a restaurant's health grade. The model could be used by the city to customize its inspection schedule and improve its ROI.
 
 We conclude by suggesting policy improvements and future areas of research to further the analysis.
 
@@ -61,7 +61,6 @@ We thus aggregate the result of our parsing into 5 different categories:
 3. Open for Long Hours ("Long Hours")
 4. Open for Short Hours ("Short Hours")
 5. Data not available - not the usual format or not disclosed on Yelp ("N/A")
-
 
 **After cleaning the dataset, we study ~17,000 restaurants**
 
@@ -168,6 +167,8 @@ We split our data 60/20/20 between the Training/Test/Validation set in order to 
 We standardize the variable related to the size of the chain and the number of reviews.
 
 For the model, we keep the variables relating to the inspection count, the chain size, the type of cuisine, the price point, the neighborhood and whether the restaurant is open overnight.
+
+We set 1 to refer to the restaurant not being graded A and 0 for restaurants graded A.
 
 ### A Logistic Regression Does Not Improve the Model Much
 
